@@ -1,5 +1,122 @@
-*,*::before,*::after{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: darkkhaki;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background-color: #0d1117;
+
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 50vw;
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+.display {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numeral {
+  background-color: darkseagreen;
+  border: 1px solid black;
+  border-radius: 0.15em;
+  height: 70%;
+  width: 90%;
+  font-size: 4.5em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.keypad {
+  width: 90%;
+  height: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  grid-template-areas:
+    "ac c per div"
+    "seven eight nine mul"
+    "four five six sub"
+    "one two three add"
+    "zero dot equ add";
+}
+.addition {
+  grid-area: add;
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
+#seven {
+  grid-area: seven;
+}
+#eight {
+  grid-area: eight;
+}
+#nine {
+  grid-area: nine;
+}
+#zero {
+  grid-area: zero;
+}
+.dot {
+  grid-area: dot;
+}
+
+button {
+  border: transparent;
+  border-radius: 0.1em;
+  color: white;
+  font-size: 2.5em;
+  transition: all 0.25s ease;
+}
+
+.function {
+  background-color: firebrick;
+}
+
+.operation {
+  background-color: #30363d;
+}
+
+.number, .dot{
+    background-color: gray;
+}
+
+
+button:hover{
+    filter: brightness(120%);
 }

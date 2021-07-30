@@ -1,3 +1,9 @@
+@font-face {
+  /* Digital-7 Font by Style-7 from fontspace */
+  font-family: "Digital-7";
+  src: url(assets/Digital7Italic-RBM3.ttf);
+}
+
 *,
 *::before,
 *::after {
@@ -7,7 +13,7 @@
 }
 
 body {
-  background-color: darkkhaki;
+  background: radial-gradient(beige, thistle);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,11 +22,12 @@ body {
 
 .calculator {
   background-color: #0d1117;
-
   display: flex;
   flex-direction: column;
-  height: 80vh;
-  width: 50vw;
+  height: 80%;
+  max-height: 95%;
+  width: 30rem;
+  max-width: 95%;
   border: 1px solid black;
   border-radius: 1em;
 }
@@ -33,21 +40,23 @@ body {
 }
 
 .numeral {
+  font-family: "Digital-7";
   background-color: darkseagreen;
   border: 1px solid black;
   border-radius: 0.15em;
   height: 70%;
   width: 90%;
-  font-size: 4.5em;
+  font-size: 600%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.5rem;
 }
 
 .keypad {
   width: 90%;
   height: 70%;
-  margin: auto;
+  margin: 0.5rem auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -112,11 +121,16 @@ button {
   background-color: #30363d;
 }
 
-.number, .dot{
-    background-color: gray;
+.number,
+.dot {
+  background-color: gray;
 }
 
+button:hover {
+  filter: brightness(110%);
+}
 
-button:hover{
-    filter: brightness(120%);
+button:active, .touched {
+  transform: scale(0.95);
+  filter: brightness(90%);
 }
